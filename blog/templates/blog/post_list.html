@@ -4,11 +4,18 @@
 	</head>
 	<body>
 		<div>
-			<h2>Woot Woot! It's working y'all!!</h2>		
+			<h1>Woot Woot! It's working y'all!!</h1>		
 		</div>
 		<div>
-			<h3><a href="">My First Django Blog</a></h3>
+			<h2><a href="">My First Django Blog</a></h2>
 		</div>
+		{% for post in posts %}
+		    <div>
+		        <p>published: {{ post.published_date }}</p>
+		        <h3><a href="">{{ post.title }}</a></h3>
+		        <p>{{ post.text|linebreaksbr }}</p>
+		    </div>
+		{% endfor %}
 
 	</body>
 </html>
